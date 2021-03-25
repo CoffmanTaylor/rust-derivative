@@ -70,7 +70,7 @@ fn derive_impls(
 }
 
 #[cfg(not(tarpaulin_include))]
-#[cfg_attr(not(test), proc_macro_derive(Derivative, attributes(derivative)))]
+#[proc_macro_derive(Derivative, attributes(derivative))]
 pub fn derivative(input: TokenStream) -> TokenStream {
     derivative_internal(syn::parse_macro_input!(input as syn::DeriveInput)).into()
 }
